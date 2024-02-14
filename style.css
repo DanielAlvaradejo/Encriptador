@@ -1,0 +1,292 @@
+body {
+  font-family: 'Play', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  /* Inicialmente visible */
+  transition: opacity 1s ease;
+  /* Transición de opacidad al hacer clic en el botón */
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.alura-logo {
+  text-align: center;
+  width: 30%;
+  position: absolute;
+}
+
+#entrarBtn {
+  background-color: #072B61;
+  position: absolute;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid #011e38;
+  border-radius: 15px;
+  outline: none;
+  margin: 20px;
+  top: calc(70% + 0.5em);
+}
+
+
+.pagina-principal {
+  display: none;
+  /* Inicialmente oculto */
+  text-align: center;
+  background: #000e27;
+}
+
+.encabezado {
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(#052051, #000e27);
+}
+
+.logo-alura {
+  width: 5em;
+}
+
+#titulo {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-align: center;
+  font-size: 5em;
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+textarea {
+  width: 70%;
+  /* Ancho del textarea */
+  height: 300px;
+  /* Altura del textarea */
+  padding: 10px;
+  border: 2px solid #011e38;
+  /* Borde gris claro */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  background-color: #000e27;
+  /* Color de fondo gris oscuro */
+  color: #fff;
+  /* Color del texto */
+  font-size: 1em;
+  resize: none;
+  /* Evitar que el usuario pueda redimensionar el textarea */
+  display: inline-block;
+}
+
+textarea::placeholder {
+  color: white;
+  /* Color del texto de marcador de posición */
+  font-size: 0.7em;
+}
+
+.copiar {
+  width: fit-content;
+  margin-left: 60%;
+  text-align: right;
+}
+
+#copiarBtn {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid #011e38;
+  border-radius: 15px;
+  padding: 5px 15px;
+  color: white;
+  font-size: 0.7em;
+  left: 100%;
+}
+
+#copiarBtn:hover {
+  background-color: #1b3147;
+  box-shadow: 0 0 10px rgba(90, 142, 204, 0.8);
+}
+
+.botones {
+  text-align: center;
+  margin: 15px;
+}
+
+#alerta {
+  color: white;
+  margin: 0 0 15px;
+}
+
+#encriptar {
+  padding: 15px 25px;
+  margin: 0 20px;
+  background: #356EA9;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+#encriptar:hover {
+  background-color: #3d7cc0;
+  box-shadow: 0 0 10px rgba(90, 142, 204, 0.8);
+}
+
+#desencriptar {
+  padding: 15px 25px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #609ED4;
+}
+
+#desencriptar:hover {
+  background-color: #66a8e1;
+  box-shadow: 0 0 10px rgba(90, 142, 204, 0.8);
+}
+
+.pie-pagina {
+  text-align: center;
+}
+
+.icono {
+  width: 2em;
+  margin: 10px 10px 0 0;
+
+}
+
+.copyright {
+  color: #FFFFFF;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
+@media only screen and (min-width: 1200px) {
+  #titulo {
+    font-size: 4em;
+  }
+
+  .grid {  display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 4px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "input-container output-container"
+      ". copiar"
+      "botones botones";
+  }
+  
+  .input-container { grid-area: input-container; }
+  
+  .output-container { grid-area: output-container; }
+  
+  .botones { grid-area: botones; }
+  
+  .copiar { grid-area: copiar; }
+}
+
+/* Estilos para pantallas de tamaño mediano (por ejemplo, tablets) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #titulo {
+    font-size: 3.5em;
+  }
+
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+  }
+  
+}
+
+
+
+/* Estilos para pantallas de tamaño pequeño (por ejemplo, teléfonos móviles) */
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  #titulo {
+    font-size: 3em;
+  }
+
+  .grid {
+    display: grid; 
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px 0px; 
+    grid-template-areas: 
+      "input-container"
+      "botones"
+      "output-contanier"
+      "copiar"; 
+  }
+
+  .input-container { grid-area: input-container; }
+  .botones { grid-area: botones; }
+  .output-contanier { grid-area: output-contanier; }
+  .copiar { grid-area: copiar; }
+}
+
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+  #titulo {
+    font-size: 3em;
+  }
+
+  .grid {
+    display: grid; 
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px 0px; 
+    grid-template-areas: 
+      "input-container"
+      "botones"
+      "output-contanier"
+      "copiar"; 
+  }
+
+  .input-container { grid-area: input-container; }
+  .botones { grid-area: botones; }
+  .output-contanier { grid-area: output-contanier; }
+  .copiar { grid-area: copiar; }
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+  #titulo {
+    font-size: 3em;
+  }
+
+  .grid {
+    display: grid; 
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px 0px; 
+    grid-template-areas: 
+      "input-container"
+      "botones"
+      "output-contanier"
+      "copiar"; 
+  }
+
+  .input-container { grid-area: input-container; }
+  .botones { grid-area: botones; }
+  .output-contanier { grid-area: output-contanier; }
+  .copiar { grid-area: copiar; }
+}

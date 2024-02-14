@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Pantalla de Carga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background">
+        <canvas></canvas>
+        <img src="imagenes/alura-logo.1686744883.svg" alt="logo alura" class="alura-logo">
+        <button id="entrarBtn">Entrar</button>
+    </div>
+    <div class="pagina-principal">
+
+    <header class="encabezado">
+        <h1 id="logo">
+            <a href="https://www.linkedin.com/company/alura-latam/" target="_blank"> 
+                <img src="imagenes/logo.png" alt="logo-alura" class="logo-alura">
+            </a>
+        </h1>
+        <section class="titulo">
+            <h2 id="titulo">Encriptador</h2>
+        </section>
+    </header>
+
+    <main>
+        <div class="grid">
+
+            <div class="input-container">
+                <textarea name="input" id="input" placeholder="Ingresa texto a encriptar"></textarea>
+            </div>
+
+            <div class="output-container">
+                <textarea name="output" id="output" placeholder="" readonly></textarea>
+            </div>
+
+            <div class="copiar">
+                <button id="copiarBtn" onclick="copiar()">Copiar</button>
+            </div>
+
+            <div class="botones">
+                <section id="alerta">
+                    <p>&#x26A0; Solo letras minúsculas y sin acentos</p>
+                </section>
+                <button id="encriptar" onclick="encriptar()">Encriptar</button>
+                <button id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="pie-pagina">
+            <a href="https://www.linkedin.com/in/daniel-alvaradejo/" target="_blank">
+                <img class="icono" src="imagenes/linkedin.png" alt="linkedin"></a>
+            <a href="https://github.com/DanielAlvaradejo" target="_blank">
+                <img class="icono" src="imagenes/github.png" alt="github"></a>
+            <p class="copyright"> &copy Daniel Alvaradejo - 2024</p>
+        </div>
+    </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
