@@ -92,18 +92,37 @@ var canvas = document.querySelector('canvas'),
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+window.addEventListener('resize', function() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
 // Setting up the letters
 var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
 letters = letters.split('');
 
 // Setting up the columns
-var fontSize = 14,
+var fontSize = window.innerWidth / 30;
     columns = canvas.width / fontSize;
 
 // Setting up the drops
 var drops = [];
 for (var i = 0; i < columns; i++) {
   drops[i] = 1;
+}
+
+window.addEventListener('resize', resizeCanvas);
+
+function resizeCanvas() {
+
+  fontSize = window.innerWidth / 30;
+  
+  // establecer nuevas dimensiones 
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  draw(); // redibujar canvas
+  
 }
 
 // Setting up the draw function
@@ -121,10 +140,7 @@ function draw() {
   }
 }
 
-window.addEventListener('resize', function() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
+
 // Loop the animation
 setInterval(draw, 33);
 

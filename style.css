@@ -1,7 +1,8 @@
 body {
   font-family: 'Play', sans-serif;
-  width: 100%;
-  height: 100%;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .background {
@@ -77,8 +78,6 @@ canvas {
 textarea {
   width: 70%;
   /* Ancho del textarea */
-  height: 300px;
-  /* Altura del textarea */
   padding: 10px;
   border: 2px solid #011e38;
   /* Borde gris claro */
@@ -178,6 +177,13 @@ textarea::placeholder {
 
 /* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
 @media only screen and (min-width: 1200px) {
+  
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+  }
+  
   #titulo {
     font-size: 4em;
   }
@@ -200,10 +206,21 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   
   .copiar { grid-area: copiar; }
+
+  textarea{
+    height: 250px;
+  }
 }
 
+
 /* Estilos para pantallas de tamaño mediano (por ejemplo, tablets) */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+  }
+  
   #titulo {
     font-size: 3.5em;
   }
@@ -213,13 +230,36 @@ textarea::placeholder {
   .pagina-principal {
     height: 100%;
   }
-  
+  .grid {
+    display: grid; 
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px 0px; 
+    grid-template-areas: 
+      "input-container"
+      "botones"
+      "output-contanier"
+      "copiar"; 
+  }
+
+  .input-container { grid-area: input-container; }
+  .botones { grid-area: botones; }
+  .output-contanier { grid-area: output-contanier; }
+  .copiar { grid-area: copiar; }
+
+  textarea{
+    height: 390px;
+  }
 }
 
-
-
 /* Estilos para pantallas de tamaño pequeño (por ejemplo, teléfonos móviles) */
-@media only screen and (min-width: 767px) and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 900px) {
+  
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+  }
   #titulo {
     font-size: 3em;
   }
@@ -240,11 +280,19 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
+
+  textarea{
+    height: 290px;
+  }
 }
 
 /* Tablets y phablets */
-@media only screen and (min-width: 576px) and (max-width: 767px){
-
+@media only screen and (min-width: 575px) and (max-width: 767px){
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+  }
   #titulo {
     font-size: 3em;
   }
@@ -265,10 +313,58 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
+
+  textarea{
+    height: 180px;
+  }
 }
 
 /* Teléfonos */
-@media only screen and (max-width: 575px){
+@media only screen and (min-width: 390px) and (max-width: 575px){
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  #titulo {
+    font-size: 3em;
+  }
+
+  .grid {
+    display: grid; 
+    overflow: auto;
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px 0px; 
+    grid-template-areas: 
+      "input-container"
+      "botones"
+      "output-contanier"
+      "copiar"; 
+  }
+
+  .input-container { grid-area: input-container; }
+  .botones { grid-area: botones; }
+  .output-contanier { grid-area: output-contanier; }
+  .copiar { grid-area: copiar; }
+
+  textarea{
+    height: 200px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 390px){
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
   #titulo {
     font-size: 3em;
   }
@@ -289,4 +385,78 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
+
+  textarea{
+    height: 110px;
+  }
 }
+
+/* Teléfonos pequeños */
+
+@media only screen and (max-width: 300px){
+  html,
+  body,
+  .pagina-principal {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  #titulo {
+    font-size: 3em;
+  }
+
+  .grid {
+    display: grid; 
+    grid-template-columns: auto; 
+    grid-template-rows: auto auto auto auto; 
+    gap: 20px 0px; 
+    grid-template-areas: 
+      "input-container"
+      "botones"
+      "output-contanier"
+      "copiar"; 
+  }
+
+  .input-container { grid-area: input-container; }
+  .botones { grid-area: botones; }
+  .output-contanier { grid-area: output-contanier; }
+  .copiar { grid-area: copiar; }
+  
+  .copiar {
+    width: fit-content;
+    margin-left: 40%;
+    text-align: right;
+  }
+
+  .botones {
+    margin: 5px;
+
+  }
+  #encriptar {
+    padding: 5px 10px;
+    margin: 0 10px;
+    background: #356EA9;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #desencriptar {
+    padding: 5px 10px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: #609ED4;
+  }
+
+  #alerta{
+    font-size: 0.7em;
+  }
+  
+  textarea{
+    height: 120px;
+  }
+}
+
