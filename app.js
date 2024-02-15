@@ -53,13 +53,18 @@ function desencriptar(texto) {
 
 document.getElementById('encriptar').addEventListener('click', function() {
   var input = document.getElementById('input').value;
-
-  if (/[^a-z\s.,;:'"!?]/.test(input)) {
+  if(input === '') {
+    alertify.error('Debes introducir un texto'); 
+    return;
+  }
+    if (/[^a-z\s.,;:'"!?]/.test(input)) {
     // Si el texto contiene caracteres que no son letras minúsculas
     alertify.error('Por favor, ingresa solo letras minúsculas.');
   } else {
     var output = encriptar(input);
-    document.getElementById('output').value = output;
+     document.getElementById('output').value = ''; 
+   document.getElementById('output').value = output;
+   document.getElementById('input').value = ''; 
     alertify.success('¡Se ha encriptado con éxito!');
   }
 });
@@ -67,22 +72,38 @@ document.getElementById('encriptar').addEventListener('click', function() {
 
 document.getElementById('desencriptar').addEventListener('click', function() {
   var input = document.getElementById('input').value;
-
+  if(input === '') {
+    alertify.error('Debes introducir un texto'); 
+    return;
+  }
   if (/[^a-z\s.,;:'"!?]/.test(input)) {
     alertify.error('Por favor, ingresa solo letras minúsculas.');
   } else {
     var output = desencriptar(input);
+    document.getElementById('output').value = ''; 
     document.getElementById('output').value = output;
-    alertify.success('¡Se ha desencriptado con éxito!');
+    document.getElementById('input').value = ''; 
+     alertify.success('¡Se ha desencriptado con éxito!');
   }
 });
 
 document.getElementById('copiarBtn').addEventListener('click', function() {
+  
   var output = document.getElementById('output');
+  
+  // Validamos que haya texto
+  if(output.value.trim().length === 0) {
+    return; 
+  }
+  
+  // Copiamos 
   output.select();
   document.execCommand('copy');
+  
+  // Notificamos  
   alertify.success('¡Texto copiado al portapapeles!')
 });
+
 
 // Initialising the canvas
 var canvas = document.querySelector('canvas'),
