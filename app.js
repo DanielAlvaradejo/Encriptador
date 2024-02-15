@@ -127,6 +127,7 @@ function resizeCanvas() {
 
 // Setting up the draw function
 function draw() {
+
   ctx.fillStyle = 'rgba(0.0196, 0.1255, 0.3176, .1)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   for (var i = 0; i < drops.length; i++) {
