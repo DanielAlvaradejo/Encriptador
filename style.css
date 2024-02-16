@@ -27,9 +27,7 @@ footer {
   align-items: center;
   text-align: center;
   opacity: 1;
-  /* Inicialmente visible */
   transition: opacity 1s ease;
-  /* Transición de opacidad al hacer clic en el botón */
 }
 
 canvas {
@@ -61,7 +59,6 @@ canvas {
 .pagina-principal {
   display: none;
   height: 100%;
-  /* Inicialmente oculto */
   text-align: center;
   background: #000e27;
 }
@@ -90,25 +87,18 @@ canvas {
 
 textarea {
   width: 70%;
-  /* Ancho del textarea */
   padding: 10px;
   border: 2px solid #011e38;
-  /* Borde gris claro */
   border-radius: 15px;
-  /* Bordes redondeados */
   background-color: #000e27;
-  /* Color de fondo gris oscuro */
   color: #fff;
-  /* Color del texto */
   font-size: 1em;
   resize: none;
-  /* Evitar que el usuario pueda redimensionar el textarea */
   display: inline-block;
 }
 
 textarea::placeholder {
   color: white;
-  /* Color del texto de marcador de posición */
   font-size: 0.7em;
 }
 .grid{
@@ -201,7 +191,6 @@ textarea::placeholder {
   margin-top: 5px;
 }
 
-/* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
 @media only screen and (min-width: 2000px) {
 
   #titulo {
@@ -226,12 +215,8 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 1250px;
-  } */
 }
-/* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
+
 @media only screen and (min-width: 1640px) and (max-width: 2000px) {
 
   #titulo {
@@ -256,10 +241,6 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 650px;
-  } */
 }
 @media only screen and (min-width: 1400px) and (max-width: 2000px) {
 
@@ -286,12 +267,8 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 650px;
-  } */
 }
-/* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
+
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
   
 
@@ -318,14 +295,8 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 380px;
-  } */
 }
 
-
-/* Estilos para pantallas de tamaño mediano (por ejemplo, tablets) */
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
 
   
@@ -350,13 +321,8 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 390px;
-  } */
 }
 
-/* Estilos para pantallas de tamaño pequeño (por ejemplo, teléfonos móviles) */
 @media only screen and (min-width: 767px) and (max-width: 900px) {
   
 
@@ -380,13 +346,8 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 290px;
-  } */
 }
 
-/* Tablets y phablets */
 @media only screen and (min-width: 575px) and (max-width: 767px){
 
   #titulo {
@@ -409,16 +370,9 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 180px;
-  } */
 }
 
-/* Teléfonos */
 @media only screen and (min-width: 390px) and (max-width: 575px){
-
-  
   
   #titulo {
     font-size: 3em;
@@ -441,16 +395,10 @@ textarea::placeholder {
   .botones { grid-area: botones; }
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
-
-/*   textarea{
-    height: 200px;
-  } */
 }
 
 @media only screen and (min-width: 300px) and (max-width: 390px){
 
-  
-  
   #titulo {
     font-size: 3em;
   }
@@ -499,17 +447,10 @@ textarea::placeholder {
     background: #609ED4;
   }
 
-/*   textarea{
-    height: 110px;
-  } */
 }
-
-/* Teléfonos pequeños */
 
 @media only screen and (max-width: 300px){
 
-  
-  
   #titulo {
     font-size: 3em;
   }
@@ -559,7 +500,4 @@ textarea::placeholder {
     background: #609ED4;
   }
 
-/*   textarea{
-    height: 70%;
-  } */
 }

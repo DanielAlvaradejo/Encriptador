@@ -1,17 +1,17 @@
+/* Encriptador */
+
 document.addEventListener("DOMContentLoaded", function () {
   const background = document.querySelector('.background');
   const entrarBtn = document.getElementById('entrarBtn');
   const paginaPrincipal = document.querySelector('.pagina-principal');
 
   entrarBtn.addEventListener('click', function() {
-    // Animación para desvanecer la pantalla inicial y mostrar la página principal
     gsap.to(background, { opacity: 0, duration: 2, onComplete: showMainPage });
   });
 
   function showMainPage() {
     background.style.display = 'none';
     paginaPrincipal.style.display = 'block';
-    // Otras animaciones o lógica para la página principal pueden ir aquí
   }
 });
 
@@ -41,6 +41,7 @@ function encriptar(texto) {
     }
     return resultado;
 }
+
 function desencriptar(texto) {
   var resultado = texto;
   resultado = resultado.replace(/ai/g, 'a');
@@ -58,7 +59,6 @@ document.getElementById('encriptar').addEventListener('click', function() {
     return;
   }
     if (/[^a-z\s.,;:'"!?]/.test(input)) {
-    // Si el texto contiene caracteres que no son letras minúsculas
     alertify.error('Por favor, ingresa solo letras minúsculas.');
   } else {
     var output = encriptar(input);
@@ -91,25 +91,21 @@ document.getElementById('copiarBtn').addEventListener('click', function() {
   
   var output = document.getElementById('output');
   
-  // Validamos que haya texto
   if(output.value.trim().length === 0) {
     return; 
   }
-  
-  // Copiamos 
+
   output.select();
   document.execCommand('copy');
   
-  // Notificamos  
   alertify.success('¡Texto copiado al portapapeles!')
 });
 
+/* Animación de pre-inicio*/
 
-// Initialising the canvas
 var canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d');
 
-// Setting the width and height of the canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -118,15 +114,12 @@ window.addEventListener('resize', function() {
   canvas.height = window.innerHeight;
 });
 
-// Setting up the letters
 var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
 letters = letters.split('');
 
-// Setting up the columns
 var fontSize = window.innerWidth / 30;
     columns = canvas.width / fontSize;
 
-// Setting up the drops
 var drops = [];
 for (var i = 0; i < columns; i++) {
   drops[i] = 1;
@@ -138,15 +131,13 @@ function resizeCanvas() {
 
   fontSize = window.innerWidth / 30;
   
-  // establecer nuevas dimensiones 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   
-  draw(); // redibujar canvas
+  draw();
   
 }
 
-// Setting up the draw function
 function draw() {
 
   ctx.fillStyle = 'rgba(0.0196, 0.1255, 0.3176, .1)';
@@ -162,8 +153,6 @@ function draw() {
   }
 }
 
-
-// Loop the animation
 setInterval(draw, 33);
 
 
