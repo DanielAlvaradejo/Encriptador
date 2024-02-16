@@ -1,10 +1,22 @@
-body {
+
+body, html {
   font-family: 'Play', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 body::-webkit-scrollbar {
   display: none;
 }
+header{
+  height: 20%;
+}
+main {
+  height: 70%;
+}
 
+footer {
+  height: 10%;
+}
 .background {
   position: flex;
   display: flex;
@@ -48,6 +60,7 @@ canvas {
 
 .pagina-principal {
   display: none;
+  height: 100%;
   /* Inicialmente oculto */
   text-align: center;
   background: #000e27;
@@ -98,12 +111,22 @@ textarea::placeholder {
   /* Color del texto de marcador de posición */
   font-size: 0.7em;
 }
+.grid{
+  height: 100%;
+}
+.input-container, .output-container, textarea {
+  height: 100%;
+}
+
 
 .copiar {
   width: fit-content;
+  margin-top: 5%;
   margin-left: 60%;
   text-align: right;
+  height: 10%;
 }
+
 
 #copiarBtn {
   position: relative;
@@ -122,8 +145,9 @@ textarea::placeholder {
 }
 
 .botones {
+  height: 20%;
   text-align: center;
-  margin: 15px;
+  margin: 10%;
 }
 
 #alerta {
@@ -180,20 +204,14 @@ textarea::placeholder {
 
 /* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
 @media only screen and (min-width: 2000px) {
-  
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
-  
+
   #titulo {
     font-size: 4em;
   }
 
   .grid {  display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 50% auto auto;    
     gap: 4px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -210,26 +228,20 @@ textarea::placeholder {
   
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 1250px;
-  }
+  } */
 }
 /* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
 @media only screen and (min-width: 1640px) and (max-width: 2000px) {
-  
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
-  
+
   #titulo {
     font-size: 4em;
   }
 
   .grid {  display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 50% auto auto;
     gap: 4px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -246,17 +258,12 @@ textarea::placeholder {
   
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 650px;
-  }
+  } */
 }
 @media only screen and (min-width: 1400px) and (max-width: 2000px) {
-  
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
+
   
   #titulo {
     font-size: 4em;
@@ -264,7 +271,7 @@ textarea::placeholder {
 
   .grid {  display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 50% auto auto;
     gap: 4px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -281,18 +288,14 @@ textarea::placeholder {
   
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 650px;
-  }
+  } */
 }
 /* Estilos para pantallas de tamaño grande (por ejemplo, laptops, monitores) */
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
   
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
+
   
   #titulo {
     font-size: 4em;
@@ -300,7 +303,7 @@ textarea::placeholder {
 
   .grid {  display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 50% auto auto;
     gap: 4px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -317,33 +320,25 @@ textarea::placeholder {
   
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 380px;
-  }
+  } */
 }
 
 
 /* Estilos para pantallas de tamaño mediano (por ejemplo, tablets) */
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
+
   
   #titulo {
     font-size: 3.5em;
   }
 
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
+
   .grid {
     display: grid; 
     grid-template-columns: auto; 
-    grid-template-rows: auto auto auto auto; 
+    grid-template-rows: 25% auto 25% auto;    
     gap: 20px 0px; 
     grid-template-areas: 
       "input-container"
@@ -357,19 +352,15 @@ textarea::placeholder {
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 390px;
-  }
+  } */
 }
 
 /* Estilos para pantallas de tamaño pequeño (por ejemplo, teléfonos móviles) */
 @media only screen and (min-width: 767px) and (max-width: 900px) {
   
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
+
   #titulo {
     font-size: 3em;
   }
@@ -377,7 +368,7 @@ textarea::placeholder {
   .grid {
     display: grid; 
     grid-template-columns: auto; 
-    grid-template-rows: auto auto auto auto; 
+    grid-template-rows: 25% auto 25% auto;    
     gap: 20px 0px; 
     grid-template-areas: 
       "input-container"
@@ -391,18 +382,14 @@ textarea::placeholder {
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 290px;
-  }
+  } */
 }
 
 /* Tablets y phablets */
 @media only screen and (min-width: 575px) and (max-width: 767px){
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-  }
+
   #titulo {
     font-size: 3em;
   }
@@ -410,7 +397,7 @@ textarea::placeholder {
   .grid {
     display: grid; 
     grid-template-columns: auto; 
-    grid-template-rows: auto auto auto auto; 
+    grid-template-rows: 25% auto 25% auto;    
     gap: 20px 0px; 
     grid-template-areas: 
       "input-container"
@@ -424,19 +411,14 @@ textarea::placeholder {
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 180px;
-  }
+  } */
 }
 
 /* Teléfonos */
 @media only screen and (min-width: 390px) and (max-width: 575px){
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-    width: 100%;
-  }
+
   
   
   #titulo {
@@ -447,7 +429,7 @@ textarea::placeholder {
     display: grid; 
     overflow: auto;
     grid-template-columns: auto; 
-    grid-template-rows: auto auto auto auto; 
+    grid-template-rows: 25% auto 25% auto;    
     gap: 20px 0px; 
     grid-template-areas: 
       "input-container"
@@ -461,18 +443,13 @@ textarea::placeholder {
   .output-contanier { grid-area: output-contanier; }
   .copiar { grid-area: copiar; }
 
-  textarea{
+/*   textarea{
     height: 200px;
-  }
+  } */
 }
 
 @media only screen and (min-width: 300px) and (max-width: 390px){
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-    width: 100%;
-  }
+
   
   
   #titulo {
@@ -482,7 +459,7 @@ textarea::placeholder {
   .grid {
     display: grid; 
     grid-template-columns: auto; 
-    grid-template-rows: auto auto auto auto; 
+    grid-template-rows: 25% auto 25% auto;    
     gap: 20px 0px; 
     grid-template-areas: 
       "input-container"
@@ -523,20 +500,15 @@ textarea::placeholder {
     background: #609ED4;
   }
 
-  textarea{
+/*   textarea{
     height: 110px;
-  }
+  } */
 }
 
 /* Teléfonos pequeños */
 
 @media only screen and (max-width: 300px){
-  html,
-  body,
-  .pagina-principal {
-    height: 100%;
-    width: 100%;
-  }
+
   
   
   #titulo {
@@ -546,7 +518,7 @@ textarea::placeholder {
   .grid {
     display: grid; 
     grid-template-columns: auto; 
-    grid-template-rows: auto auto auto auto; 
+    grid-template-rows: 25% auto 25% auto;    
     gap: 20px 0px; 
     grid-template-areas: 
       "input-container"
@@ -588,8 +560,7 @@ textarea::placeholder {
     background: #609ED4;
   }
 
-  textarea{
-    height: 100px;
-  }
+/*   textarea{
+    height: 70%;
+  } */
 }
-
